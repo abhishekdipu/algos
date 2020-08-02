@@ -7,7 +7,18 @@
 //   reverseInt(-13) === -31
 //   reverseInt(-100) === -1
 
-function reverseInt(n) {}
+function reverseInt(n) {
+  if (n >= 0) {
+    n = n.toString();
+    return parseInt(n.split("").reverse().join(""));
+  } else {
+    n = n * -1;
+    n = n.toString();
+    return parseInt("-" + n.split("").reverse().join(""));
+  }
+}
+
+//TC- O(log N)- log N of base 10-> if input increased by factor of 10, we do one more operation
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \

@@ -3,8 +3,25 @@
 // maxChar("I loveeeeeee noodles") === "e"
 // maxChar("1337") === "3"
 
-function maxChar(str) {}
+function maxChar(str) {
+  str = str.split("");
+  let max = 0;
+  let maxElemment = "";
+  for (let i = 0; i < str.length; i++) {
+    let currentElementCount = 0;
+    for (let j = 0; j < str.length; j++) {
+      if (str[i] == str[j]) currentElementCount++;
+    }
+    if (currentElementCount > max) {
+      max = currentElementCount;
+      maxElemment = str[i];
+    }
+  }
+  return maxElemment;
+}
 
+//TC : O(N)->as we are going through each element
+//SC : 0(1)->as we have fix number of element to store the count of themselves
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
 //    ) (   | (    \/| (    \/   ) (     | (    \/| (   ) || (    \/| (    \/| (    \/

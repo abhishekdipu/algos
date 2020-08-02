@@ -5,8 +5,20 @@
 //   palindrome("Madam") === true
 //   palindrome("love") === false
 
-function palindrome(str) {}
+// //1st way
+// function palindrome(str) {
+//   str = str.toLowerCase();
+//   let rev = str.split("").reverse().join("");
+//   if (rev == str) return true;
 
+//   return false;
+// }
+function palindrome(str) {
+  str = str.toLowerCase();
+  return str === str.split("").reverse().join("");
+}
+
+//Time Complexity: O(N): as we go over every character in the input string to reverse it
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
 //    ) (   | (    \/| (    \/   ) (     | (    \/| (   ) || (    \/| (    \/| (    \/
